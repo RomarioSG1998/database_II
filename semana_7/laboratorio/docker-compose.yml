@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mysql-lab:
+    image: mysql:8.0
+    container_name: mysql-semana7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "33067:3306"
+
+  mongodb-lab:
+    image: mongo:7.0
+    container_name: mongo-semana7
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    ports:
+      - "27018:27017"
