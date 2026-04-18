@@ -1,0 +1,22 @@
+// Comandos utilizados no Laboratório da Semana 7
+
+// 1. Inserção de dados iniciais
+db.Paciente.insertMany([
+  {nome: 'Joao Silva', idade: 45},
+  {nome: 'Maria Oliveira', idade: 30},
+  {nome: 'Jose Santos', idade: 60},
+  {nome: 'Ana Costa', idade: 25},
+  {nome: 'Carlos Peixoto', idade: 50}
+]);
+
+// 2. Verificação
+db.Paciente.find();
+
+// 3. Simulação de perda de dados (Exclusão por critério)
+db.Paciente.deleteMany({idade: {$gt: 40}});
+
+// 4. Verificação após exclusão
+db.Paciente.find();
+
+// 5. Restauração (Comandos externos mongorestore)
+// mongorestore --db Hospital --collection Paciente backup_pacientes.bson
